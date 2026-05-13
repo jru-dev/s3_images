@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 Image Manager | Premium Storage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>S3 Image Manager</h1>
+            <p>Gestión segura y profesional de tus activos visuales</p>
+        </header>
+
+        <main>
+            <section class="upload-section glass">
+                <h2>Subir Nueva Imagen</h2>
+                <div class="upload-container">
+                    <label for="file-input" class="file-label">
+                        <span class="icon">📁</span>
+                        <span class="text">Seleccionar imagen o arrastrar aquí</span>
+                        <span class="limit">Máx 5MB (JPG, PNG, WEBP)</span>
+                    </label>
+                    <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" hidden>
+                    <div id="file-info" class="file-info hidden">
+                        <span id="selected-filename"></span>
+                        <button id="upload-btn" class="btn-primary">Subir a S3</button>
+                    </div>
+                </div>
+                <div id="progress-container" class="progress-container hidden">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <span id="progress-text">0%</span>
+                </div>
+                <div id="status-message" class="status-message"></div>
+            </section>
+
+            <section class="gallery-section">
+                <div class="gallery-header">
+                    <h2>Galería de Imágenes</h2>
+                    <button id="refresh-btn" class="btn-secondary">Actualizar</button>
+                </div>
+                <div id="image-gallery" class="image-gallery">
+                    <!-- Las imágenes se cargarán aquí dinámicamente -->
+                    <div class="loader-container">
+                        <div class="loader"></div>
+                        <p>Cargando galería...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 AWS Cloud Storage Solutions. Desarrollado con SOLID & Node.js.</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
